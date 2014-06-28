@@ -1,6 +1,6 @@
 Nebula Particle System
 =========================
 
-A simplified version of the Supernova particle system.
+A simplified/rewritten version of the Supernova particle system.
 
 https://github.com/jasonmitchell/supernova
