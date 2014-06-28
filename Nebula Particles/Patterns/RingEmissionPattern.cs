@@ -3,11 +3,11 @@ using Microsoft.Xna.Framework;
 
 namespace Nebula.Particles2D.Patterns
 {
-    public class CircleEmissionPattern : IEmissionPattern
+    public class RingEmissionPattern : IEmissionPattern
     {
         private readonly float radius;
 
-        public CircleEmissionPattern(float radius)
+        public RingEmissionPattern(float radius)
         {
             this.radius = radius;
         }

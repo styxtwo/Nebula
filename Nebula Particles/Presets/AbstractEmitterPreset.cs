@@ -18,14 +18,23 @@ namespace Nebula.Particles2D.Presets {
                 emitter.Draw(spriteBatch);
             }
         }
-
         public void AddEmitter(IEmitter emitter) {
             if (!emitterList.Contains(emitter)) {
                 emitterList.Add(emitter);
                 offsetList.Add(emitter.Position);
             }
         }
-
+        public Vector2 Position {
+            get {
+                return this.position;
+            }
+            set {
+                this.position = value;
+                for (int i = 0; i < emitterList.Count; i++) {
+                    emitterList[i].Position = this.position + offsetList[i];
+                }
+            }
+        }
         public int GetAliveParticles() {
             int sum = 0;
             foreach (IEmitter emitter in emitterList) {
@@ -39,18 +48,6 @@ namespace Nebula.Particles2D.Presets {
                 sum += emitter.GetDeadParticles();
             }
             return sum;
-        }
-
-        public Vector2 Position {
-            get {
-                return this.position;
-            }
-            set {
-                this.position = value;
-                for (int i = 0; i < emitterList.Count; i++) {
-                    emitterList[i].Position = this.position + offsetList[i];
-                }
-            }
         }
     }
 }

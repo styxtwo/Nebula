@@ -19,7 +19,6 @@ namespace Supernova.Particles2D.Modifiers.Movement.Gravity {
                     Vector2 force = Vector2.Normalize(distance);
                     force = Vector2.Multiply(force, Strength);
                     force = Vector2.Multiply(force, (float)elapsedMiliseconds);
-
                     particle.Affect(force);
                 }
             }

@@ -10,7 +10,7 @@ namespace Nebula.Particles2D.ParticleModifiers.Movement.Gravity {
             this.Gravity = Gravity;
         }
         public void Update(Emitter emitter, Particle particle, int elapsedMiliseconds) {
-            Vector2 deltaGrav = Vector2.Multiply(Gravity, (float)elapsedMiliseconds) / 1000;
+            Vector2 deltaGrav = Gravity * elapsedMiliseconds / 1000;
             particle.Affect(deltaGrav);
         }
     }

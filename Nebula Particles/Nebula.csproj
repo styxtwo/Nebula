@@ -51,32 +51,35 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="Particles2D\EmitterModifiers\Burst.cs" />
-    <Compile Include="Particles2D\EmitterModifiers\IEmitterModifier.cs" />
-    <Compile Include="Particles2D\EmitterModifiers\Pulse.cs" />
-    <Compile Include="Particles2D\ParticleModifiers\AgeTransform\AbstractAgeTransform.cs" />
-    <Compile Include="Particles2D\ParticleModifiers\AgeTransform\Alpha.cs" />
-    <Compile Include="Particles2D\ParticleModifiers\AgeTransform\Colour.cs" />
-    <Compile Include="Particles2D\ParticleModifiers\Movement\Gravity\GravityPoint.cs" />
-    <Compile Include="Particles2D\ParticleModifiers\Movement\HorizontalLineContainer.cs" />
-    <Compile Include="Particles2D\ParticleModifiers\RandomColor.cs" />
-    <Compile Include="Particles2D\ParticleModifiers\IParticleModifier.cs" />
-    <Compile Include="Particles2D\ParticleModifiers\Movement\Friction.cs" />
-    <Compile Include="Particles2D\ParticleModifiers\Movement\Gravity\DirectionalPull.cs" />
-    <Compile Include="Particles2D\ParticleModifiers\Movement\RectParticleContainer.cs" />
-    <Compile Include="Particles2D\ParticleModifiers\AgeTransform\Scale.cs" />
-    <Compile Include="Particles2D\Particle.cs" />
-    <Compile Include="Particles2D\Emitter.cs" />
-    <Compile Include="Particles2D\Patterns\CircleEmissionPattern.cs" />
-    <Compile Include="Particles2D\Patterns\IEmissionPattern.cs" />
-    <Compile Include="Particles2D\Patterns\LineEmissionPattern.cs" />
-    <Compile Include="Particles2D\Patterns\PointEmissionPattern.cs" />
-    <Compile Include="Particles2D\Patterns\RectangleEmissionPattern.cs" />
-    <Compile Include="Particles2D\IEmitter.cs" />
-    <Compile Include="Particles2D\Presets\AbstractEmitterPreset.cs" />
-    <Compile Include="Particles2D\Presets\ColorfulRing.cs" />
-    <Compile Include="Particles2D\Presets\Rain.cs" />
-    <Compile Include="Particles2D\Range.cs" />
+    <Compile Include="EmitterModifiers\Burst.cs" />
+    <Compile Include="EmitterModifiers\IEmitterModifier.cs" />
+    <Compile Include="EmitterModifiers\Pulse.cs" />
+    <Compile Include="EmitterModifiers\Sine.cs" />
+    <Compile Include="ParticleModifiers\AgeTransform\AbstractAgeTransform.cs" />
+    <Compile Include="ParticleModifiers\AgeTransform\Alpha.cs" />
+    <Compile Include="ParticleModifiers\AgeTransform\Colour.cs" />
+    <Compile Include="ParticleModifiers\Movement\Gravity\GravityPoint.cs" />
+    <Compile Include="ParticleModifiers\Movement\Container\HorizontalLineContainer.cs" />
+    <Compile Include="ParticleModifiers\RandomColor.cs" />
+    <Compile Include="ParticleModifiers\IParticleModifier.cs" />
+    <Compile Include="ParticleModifiers\Movement\Friction.cs" />
+    <Compile Include="ParticleModifiers\Movement\Gravity\DirectionalPull.cs" />
+    <Compile Include="ParticleModifiers\Movement\Container\RectParticleContainer.cs" />
+    <Compile Include="ParticleModifiers\AgeTransform\Scale.cs" />
+    <Compile Include="Particle.cs" />
+    <Compile Include="Emitter.cs" />
+    <Compile Include="Patterns\CircleEmissionPattern.cs" />
+    <Compile Include="Patterns\RingEmissionPattern.cs" />
+    <Compile Include="Patterns\IEmissionPattern.cs" />
+    <Compile Include="Patterns\LineEmissionPattern.cs" />
+    <Compile Include="Patterns\PointEmissionPattern.cs" />
+    <Compile Include="Patterns\RectangleEmissionPattern.cs" />
+    <Compile Include="IEmitter.cs" />
+    <Compile Include="Presets\AbstractEmitterPreset.cs" />
+    <Compile Include="Presets\ColorfulRing.cs" />
+    <Compile Include="Presets\Fire.cs" />
+    <Compile Include="Presets\Rain.cs" />
+    <Compile Include="Range.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

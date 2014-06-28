@@ -15,9 +15,8 @@ namespace Nebula.Particles2D.ParticleModifiers.Movement {
 
             if (particle.ProjectedPosition.Y < Container.Top || particle.ProjectedPosition.Y > Container.Bottom)
                 particleVelocity.Y *= -bounce;
-            else
-                if (particle.ProjectedPosition.X < Container.Left || particle.ProjectedPosition.X > Container.Right)
-                    particleVelocity.X *= -bounce;
+            else if (particle.ProjectedPosition.X < Container.Left || particle.ProjectedPosition.X > Container.Right)
+                particleVelocity.X *= -bounce;
 
             particle.Velocity = particleVelocity;
         }

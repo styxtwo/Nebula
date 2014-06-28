@@ -16,11 +16,11 @@ namespace Nebula.Particles2D {
 
         internal int LifeSpan { get; private set; }
         internal int Age { get; private set; }
-        public Particle(Texture2D Texture, Color color, float Alpha = 1, float Scale = 1, float Rotation = 0) {
+        public Particle(Texture2D Texture, float Alpha = 1, float Scale = 1, float Rotation = 0) {
             this.textureOrigin = new Vector2(Texture.Width / 2f, Texture.Height / 2f);
             this.Texture = Texture;
             this.Alpha = Alpha;
-            this.color = color;
+            this.color = Color.White;
             this.Scale = Scale;
             this.Rotation = Rotation;
         }
