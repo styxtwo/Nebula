@@ -3,7 +3,7 @@
         //TODO
         public Sine() {
         }
-        public void Update(Emitter emitter, double elapsedMilliseconds) {
+        public void Update(Emitter emitter, double milliseconds) {
         }
     }
 }

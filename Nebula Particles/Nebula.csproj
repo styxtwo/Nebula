@@ -54,6 +54,7 @@
     <Compile Include="Nebula\EmitterModifiers\Burst.cs" />
     <Compile Include="Nebula\EmitterModifiers\IEmitterModifier.cs" />
     <Compile Include="Nebula\EmitterModifiers\Pulse.cs" />
+    <Compile Include="Nebula\EmitterModifiers\Rotate.cs" />
     <Compile Include="Nebula\EmitterModifiers\Sine.cs" />
     <Compile Include="Nebula\ParticleModifiers\AgeTransform\AbstractAgeTransform.cs" />
     <Compile Include="Nebula\ParticleModifiers\AgeTransform\Alpha.cs" />
@@ -79,20 +80,14 @@
     <Compile Include="Nebula\Presets\ColorfulRing.cs" />
     <Compile Include="Nebula\Presets\Fire.cs" />
     <Compile Include="Nebula\Presets\Rain.cs" />
+    <Compile Include="Nebula\Presets\RotatingOrbit.cs" />
     <Compile Include="Nebula\Range.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tests\RangeTest.cs" />
     <Compile Include="Tests\ParticleTest.cs" />
     <Compile Include="Tests\EmitterTest.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Tests\EmitterModifiers\" />
-    <Folder Include="Tests\ParticleModifiers\AgeTransform\" />
-    <Folder Include="Tests\ParticleModifiers\Movement\Container\" />
-    <Folder Include="Tests\ParticleModifiers\Movement\Gravity\" />
-    <Folder Include="Tests\Patterns\" />
-    <Folder Include="Tests\Presets\" />
-  </ItemGroup>
+  <ItemGroup />
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>

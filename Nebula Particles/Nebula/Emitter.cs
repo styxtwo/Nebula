@@ -23,8 +23,8 @@ namespace Nebula.Particles2D {
         internal ParticleInfo particleInfo = new ParticleInfo();
         public Vector2 Position { get; set; }
         private Random random;
-        public Emitter(Particle template, Range Speed, Range Angle, Range ParticleLifeSpan, Random random, float ParticlesPerFrame = 1) {
-            particleInfo.perSecond = ParticlesPerFrame;
+        public Emitter(Particle template, Range Speed, Range Angle, Range ParticleLifeSpan, Random random, float ParticlesPerSecond = 100) {
+            particleInfo.perSecond = ParticlesPerSecond;
             particleInfo.lifeSpan = ParticleLifeSpan;
             particleInfo.speed = Speed;
             particleInfo.angle = Angle;
@@ -32,9 +32,9 @@ namespace Nebula.Particles2D {
             this.random = random;
         }
         /* Update */
-        public void Update(double time) {
-            Emit(time);
-            UpdateParticles(time);
+        public void Update(double milliseconds) {
+            Emit(milliseconds);
+            UpdateParticles(milliseconds);
         }
         /* Draw */
         public void Draw(SpriteBatch spriteBatch) {
@@ -44,17 +44,17 @@ namespace Nebula.Particles2D {
         }
 
         /*Emit functions */
-        private void Emit(double time) {
-            UpdateEmitterModifiers(time);
-            CreateNewParticles(time);
+        private void Emit(double milliseconds) {
+            UpdateEmitterModifiers(milliseconds);
+            CreateNewParticles(milliseconds);
         }
-        private void UpdateEmitterModifiers(double time) {
+        private void UpdateEmitterModifiers(double milliseconds) {
             foreach (IEmitterModifier modifier in emitterModifiers) {
-                modifier.Update(this, time);
+                modifier.Update(this, milliseconds);
             }
         }
-        private void CreateNewParticles(double time) {
-            double particles = particlesThisFrame(time);
+        private void CreateNewParticles(double milliseconds) {
+            double particles = particlesThisFrame(milliseconds);
             if (RandomHigherThenFraction(particles)) {
                 AddAliveParticle();
             }
@@ -62,8 +62,8 @@ namespace Nebula.Particles2D {
                 AddAliveParticle();
             }
         }
-        private double particlesThisFrame(double time) {
-            return (particleInfo.perSecond / 1000) * time;
+        private double particlesThisFrame(double milliseconds) {
+            return (particleInfo.perSecond / 1000) * milliseconds;
         }
         private bool RandomHigherThenFraction(double particles) {
             return random.NextDouble() < (particles % 1);
@@ -88,17 +88,17 @@ namespace Nebula.Particles2D {
         }
 
         /*Update functions */
-        private void UpdateParticles(double time) {
+        private void UpdateParticles(double milliseconds) {
             foreach (Particle particle in new List<Particle>(aliveParticles)) {
-                UpdateParticleModifiers(particle, time);
-                particle.Update(time);
+                UpdateParticleModifiers(particle, milliseconds);
+                particle.Update(milliseconds);
                 RemoveDeadParticle(particle);
             }
             RemoveDeadParticleOverflow();
         }
-        private void UpdateParticleModifiers(Particle particle, double time) {
+        private void UpdateParticleModifiers(Particle particle, double milliseconds) {
             foreach (IParticleModifier modifier in particleModifiers) {
-                modifier.Update(this, particle, time);
+                modifier.Update(this, particle, milliseconds);
             }
         }
         private void RemoveDeadParticle(Particle particle) {

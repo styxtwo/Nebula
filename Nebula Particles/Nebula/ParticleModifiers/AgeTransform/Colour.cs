@@ -4,7 +4,7 @@ namespace Nebula.Particles2D.ParticleModifiers.AgeTransform {
         public Colour(Color Start, Color End, int Cycles = 1)
             : base(Start, End, Cycles) {
         }
-        public override void Update(Emitter emitter, Particle particle, double elapsedMilliseconds) {
+        public override void Update(Emitter emitter, Particle particle, double milliseconds) {
             float amount = (float)this.InterpolationAmount(particle);
             int r = (int)MathHelper.Lerp(this.Start.R, this.End.R, amount);
             int g = (int)MathHelper.Lerp(this.Start.G, this.End.G, amount);

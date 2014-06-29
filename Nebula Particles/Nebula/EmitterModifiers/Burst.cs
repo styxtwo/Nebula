@@ -1,15 +1,15 @@
 ﻿
 namespace Nebula.Particles2D.EmitterModifiers {
     public class Burst : IEmitterModifier {
-        private double burstmilliseconds;
-        public Burst(double burstmilliseconds = 1) {
-            this.burstmilliseconds = burstmilliseconds;
+        private double burstMilliseconds;
+        public Burst(double burstMilliseconds = 1) {
+            this.burstMilliseconds = burstMilliseconds;
         }
-        public void Update(Emitter emitter, double elapsedMilliseconds) {
-            if (burstmilliseconds <= 0) {
+        public void Update(Emitter emitter, double milliseconds) {
+            if (burstMilliseconds <= 0) {
                 emitter.particleInfo.perSecond = 0;
             }
-            burstmilliseconds -= elapsedMilliseconds;
+            burstMilliseconds -= milliseconds;
         }
     }
 }

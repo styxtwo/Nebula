@@ -2,7 +2,7 @@
 using Microsoft.Xna.Framework.Graphics;
 namespace Nebula.Particles2D {
     public interface IEmitter {
-        void Update(double elapsedMilliseconds);
+        void Update(double milliseconds);
         void Draw(SpriteBatch spriteBatch);
         int GetAliveParticles();
         int GetDeadParticles();

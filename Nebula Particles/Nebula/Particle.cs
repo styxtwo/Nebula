@@ -39,9 +39,9 @@ namespace Nebula.Particles2D {
             this.LifeSpan = LifeSpan;
             this.Age = 0;
         }
-        internal void Update(double elapsedMilliseconds) {
+        internal void Update(double milliseconds) {
             if (IsAlive()) {
-                Age += elapsedMilliseconds;
+                Age += milliseconds;
                 Position += Velocity;
                 ProjectedPosition = Position + Velocity;
             }

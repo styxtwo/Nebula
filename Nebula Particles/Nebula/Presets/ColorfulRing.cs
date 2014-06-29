@@ -11,11 +11,10 @@ namespace Nebula.Particles2D.Presets {
             Emitter ring = CreateRingEmitter(texture);
             this.AddEmitter(ring);
             this.Position = new Vector2(600, 300);
-
             ring.AddParticleModifier(new Alpha(1f, 0f));
             ring.AddParticleModifier(new RandomColor(random));
             ring.SetEmissionPattern(new RingEmissionPattern(100));
-            ring.AddParticleModifier(new GravityPoint(new Vector2(0, 0), 600, -0.005f));
+            ring.AddParticleModifier(new GravityPoint(new Vector2(0, 0), 600, -5f));
         }
         private Emitter CreateRingEmitter(Texture2D texture) {
             float particlesPerSecond = 3000;

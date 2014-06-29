@@ -13,6 +13,6 @@
             double lifeSpan = particle.LifeSpan;
             return (age / (lifeSpan / Cycles)) % 1;
         }
-        public abstract void Update(Emitter emitter, Particle particle, double elapsedMilliseconds);
+        public abstract void Update(Emitter emitter, Particle particle, double milliseconds);
     }
 }

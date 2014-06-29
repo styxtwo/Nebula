@@ -1,5 +1,5 @@
 namespace Nebula.Particles2D.ParticleModifiers {
     public interface IParticleModifier {
-        void Update(Emitter emitter, Particle particle, double elapsedMilliseconds);
+        void Update(Emitter emitter, Particle particle, double milliseconds);
     }
 }

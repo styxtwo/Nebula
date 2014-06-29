@@ -7,11 +7,6 @@ using Nebula.Particles2D.ParticleModifiers.AgeTransform;
 using System;
 namespace Nebula.Particles2D.Presets {
     public class Rain : AbstractEmitterPreset {
-        /*
-            Example usage:
-            Texture2D raindrop = Content.Load<Texture2D>(@"Particles/Raindrop");
-            rain = new Rain(raindrop, new Vector2(1200, 600), 10, 5, 2);
-          */
         public Rain(Texture2D rainTexture, Vector2 area, float gravity = 1, float wind = 0) {
             Emitter rain = CreateRainEmitter(rainTexture, gravity);
             this.AddEmitter(rain);

@@ -13,7 +13,7 @@ namespace Nebula.Particles2D.ParticleModifiers.Movement {
             this.Bounce = Bouce;
             this.Friction = Friction;
         }
-        public void Update(Emitter emitter, Particle particle, double elapsedMilliseconds) {
+        public void Update(Emitter emitter, Particle particle, double milliseconds) {
             Vector2 particleVelocity = particle.Velocity;
             if (particle.ProjectedPosition.Y > (y + emitter.Position.Y)) {
                 particleVelocity.Y *= -Bounce;
