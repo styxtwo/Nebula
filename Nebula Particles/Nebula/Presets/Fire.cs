@@ -4,6 +4,7 @@ using Nebula.Particles2D.EmitterModifiers;
 using Nebula.Particles2D.ParticleModifiers.AgeTransform;
 using Nebula.Particles2D.ParticleModifiers.Movement.Gravity;
 using Nebula.Particles2D.Patterns;
+using System;
 
 namespace Nebula.Particles2D.Presets {
     public class Fire : AbstractEmitterPreset {
@@ -35,37 +36,37 @@ namespace Nebula.Particles2D.Presets {
             this.AddEmitter(whiteFront);
         }
         private Emitter CreateSmoke(Texture2D texture) {
-            float particlesPerFrame = 1;
+            float particlesPerMillisecond = 60;
             Range particleSpeed = new Range(0.2f, 0.4f);
             Range particleAngle = new Range(240, 300);
             Range particleLifespan = new Range(1000, 2500);
             Particle particle = new Particle(texture);
-            return new Emitter(particle, particleSpeed, particleAngle, particleLifespan, particlesPerFrame);
+            return new Emitter(particle, particleSpeed, particleAngle, particleLifespan, new Random(), particlesPerMillisecond);
         }
         private Emitter CreateFire(Texture2D texture) {
-            float particlesPerFrame = 6;
+            float particlesPerMillisecond = 360;
             Range particleSpeed = new Range(0, 1f);
             Range particleAngle = new Range(225, 315);
             Range particleLifespan = new Range(250, 600);
             Particle particle = new Particle(texture);
-            return new Emitter(particle, particleSpeed, particleAngle, particleLifespan, particlesPerFrame);
+            return new Emitter(particle, particleSpeed, particleAngle, particleLifespan, new Random(), particlesPerMillisecond);
         }
         private Emitter CreateSparks(Texture2D texture) {
-            float particlesPerFrame = 0.2f;
+            float particlesPerMillisecond = 12.5f;
             Range particleSpeed = new Range(0, 3f);
             Range particleAngle = new Range(0, 360);
             Range particleLifespan = new Range(200, 500);
             Particle particle = new Particle(texture);
             particle.Scale = 0.3f;
-            return new Emitter(particle, particleSpeed, particleAngle, particleLifespan, particlesPerFrame);
+            return new Emitter(particle, particleSpeed, particleAngle, particleLifespan, new Random(), particlesPerMillisecond);
         }
         private Emitter CreateWhite(Texture2D texture) {
-            float particlesPerFrame = 1;
+            float particlesPerMillisecond = 60;
             Range particleSpeed = new Range(0, 0.7f);
             Range particleAngle = new Range(0, 360);
             Range particleLifespan = new Range(200, 250);
             Particle particle = new Particle(texture);
-            return new Emitter(particle, particleSpeed, particleAngle, particleLifespan, particlesPerFrame);
+            return new Emitter(particle, particleSpeed, particleAngle, particleLifespan, new Random(), particlesPerMillisecond);
         }
     }
 }

@@ -12,13 +12,13 @@ namespace Supernova.Particles2D.Modifiers.Movement.Gravity {
             this.Radius = Radius;
             this.Strength = Strength;
         }
-        public void Update(Emitter emitter, Particle particle, int elapsedMiliseconds) {
+        public void Update(Emitter emitter, Particle particle, double elapsedMilliseconds) {
             {
                 Vector2 distance = Vector2.Subtract(Position + emitter.Position, particle.Position);
                 if (distance.LengthSquared() < Radius * Radius) {
                     Vector2 force = Vector2.Normalize(distance);
                     force = Vector2.Multiply(force, Strength);
-                    force = Vector2.Multiply(force, (float)elapsedMiliseconds);
+                    force = Vector2.Multiply(force, (float)elapsedMilliseconds);
                     particle.Affect(force);
                 }
             }

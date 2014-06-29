@@ -7,7 +7,7 @@ namespace Nebula.Particles2D.ParticleModifiers.Movement {
         public Friction(float Coefficient) {
             this.Coefficient = Coefficient;
         }
-        public void Update(Emitter emitter, Particle particle, int elapsedMiliseconds) {
+        public void Update(Emitter emitter, Particle particle, double elapsedMilliseconds) {
             particle.Velocity *= Coefficient;
         }
     }

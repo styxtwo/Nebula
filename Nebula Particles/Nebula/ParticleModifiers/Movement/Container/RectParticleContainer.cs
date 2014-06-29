@@ -10,7 +10,7 @@ namespace Nebula.Particles2D.ParticleModifiers.Movement {
             this.Container = Container;
             this.Bounce = bouce;
         }
-        public void Update(Emitter emitter, Particle particle, int elapsedMiliseconds) {
+        public void Update(Emitter emitter, Particle particle, double elapsedMilliseconds) {
             Vector2 particleVelocity = particle.Velocity;
 
             if (particle.ProjectedPosition.Y < Container.Top || particle.ProjectedPosition.Y > Container.Bottom)

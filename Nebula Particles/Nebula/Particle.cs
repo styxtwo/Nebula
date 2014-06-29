@@ -1,28 +1,28 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-
 namespace Nebula.Particles2D {
     public class Particle {
-        private Texture2D Texture;
-        private Vector2 textureOrigin;
         internal Vector2 ProjectedPosition { get; private set; }
-
+        internal double LifeSpan { get; private set; }
+        internal double Age { get; private set; }
         internal Vector2 Position { get; set; }
         internal Vector2 Velocity { get; set; }
-        internal float Alpha { get; set; }
-        internal Color color { get; set; }
-        internal float Scale { get; set; }
         internal float Rotation { get; set; }
-
-        internal int LifeSpan { get; private set; }
-        internal int Age { get; private set; }
+        internal Color color { get; set; }
+        internal float Alpha { get; set; }
+        internal float Scale { get; set; }
+        private Vector2 textureOrigin;
+        private Texture2D Texture;
         public Particle(Texture2D Texture, float Alpha = 1, float Scale = 1, float Rotation = 0) {
-            this.textureOrigin = new Vector2(Texture.Width / 2f, Texture.Height / 2f);
-            this.Texture = Texture;
-            this.Alpha = Alpha;
+            if (Texture != null) {
+                this.textureOrigin = new Vector2(Texture.Width / 2f, Texture.Height / 2f);
+            } else {
+                this.textureOrigin = new Vector2(0, 0);
+            } this.Rotation = Rotation;
             this.color = Color.White;
+            this.Texture = Texture;
             this.Scale = Scale;
-            this.Rotation = Rotation;
+            this.Alpha = Alpha;
         }
         public Particle(Particle template) {
             Reset(template, new Vector2(0, 0), new Vector2(0, 0), 0);
@@ -39,23 +39,19 @@ namespace Nebula.Particles2D {
             this.LifeSpan = LifeSpan;
             this.Age = 0;
         }
-
-        internal void Update(int elapsedMiliseconds) {
+        internal void Update(double elapsedMilliseconds) {
             if (IsAlive()) {
-                Age += elapsedMiliseconds;
+                Age += elapsedMilliseconds;
                 Position += Velocity;
                 ProjectedPosition = Position + Velocity;
             }
         }
-
         internal void Affect(Vector2 attraction) {
             Velocity += attraction;
         }
-
         internal void Draw(SpriteBatch spriteBatch) {
             spriteBatch.Draw(Texture, Position, null, color * Alpha, Rotation, textureOrigin, Scale, SpriteEffects.None, 0);
         }
-
         internal bool IsAlive() {
             return Age <= LifeSpan;
         }

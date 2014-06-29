@@ -3,9 +3,12 @@ using System;
 
 namespace Nebula.Particles2D.ParticleModifiers {
     public class RandomColor : IParticleModifier {
-        public void Update(Emitter emitter, Particle particle, int elapsedMiliseconds) {
+        private Random random;
+        public RandomColor(Random random) {
+            this.random = random;
+        }
+        public void Update(Emitter emitter, Particle particle, double elapsedMilliseconds) {
             if (particle.Age == 0) {
-                Random random = new Random();
                 int r = random.Next(255);
                 int g = random.Next(255);
                 int b = random.Next(255);

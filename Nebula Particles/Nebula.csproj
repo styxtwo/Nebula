@@ -51,38 +51,48 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="EmitterModifiers\Burst.cs" />
-    <Compile Include="EmitterModifiers\IEmitterModifier.cs" />
-    <Compile Include="EmitterModifiers\Pulse.cs" />
-    <Compile Include="EmitterModifiers\Sine.cs" />
-    <Compile Include="ParticleModifiers\AgeTransform\AbstractAgeTransform.cs" />
-    <Compile Include="ParticleModifiers\AgeTransform\Alpha.cs" />
-    <Compile Include="ParticleModifiers\AgeTransform\Colour.cs" />
-    <Compile Include="ParticleModifiers\Movement\Gravity\GravityPoint.cs" />
-    <Compile Include="ParticleModifiers\Movement\Container\HorizontalLineContainer.cs" />
-    <Compile Include="ParticleModifiers\RandomColor.cs" />
-    <Compile Include="ParticleModifiers\IParticleModifier.cs" />
-    <Compile Include="ParticleModifiers\Movement\Friction.cs" />
-    <Compile Include="ParticleModifiers\Movement\Gravity\DirectionalPull.cs" />
-    <Compile Include="ParticleModifiers\Movement\Container\RectParticleContainer.cs" />
-    <Compile Include="ParticleModifiers\AgeTransform\Scale.cs" />
-    <Compile Include="Particle.cs" />
-    <Compile Include="Emitter.cs" />
-    <Compile Include="Patterns\CircleEmissionPattern.cs" />
-    <Compile Include="Patterns\RingEmissionPattern.cs" />
-    <Compile Include="Patterns\IEmissionPattern.cs" />
-    <Compile Include="Patterns\LineEmissionPattern.cs" />
-    <Compile Include="Patterns\PointEmissionPattern.cs" />
-    <Compile Include="Patterns\RectangleEmissionPattern.cs" />
-    <Compile Include="IEmitter.cs" />
-    <Compile Include="Presets\AbstractEmitterPreset.cs" />
-    <Compile Include="Presets\ColorfulRing.cs" />
-    <Compile Include="Presets\Fire.cs" />
-    <Compile Include="Presets\Rain.cs" />
-    <Compile Include="Range.cs" />
+    <Compile Include="Nebula\EmitterModifiers\Burst.cs" />
+    <Compile Include="Nebula\EmitterModifiers\IEmitterModifier.cs" />
+    <Compile Include="Nebula\EmitterModifiers\Pulse.cs" />
+    <Compile Include="Nebula\EmitterModifiers\Sine.cs" />
+    <Compile Include="Nebula\ParticleModifiers\AgeTransform\AbstractAgeTransform.cs" />
+    <Compile Include="Nebula\ParticleModifiers\AgeTransform\Alpha.cs" />
+    <Compile Include="Nebula\ParticleModifiers\AgeTransform\Colour.cs" />
+    <Compile Include="Nebula\ParticleModifiers\Movement\Gravity\GravityPoint.cs" />
+    <Compile Include="Nebula\ParticleModifiers\Movement\Container\HorizontalLineContainer.cs" />
+    <Compile Include="Nebula\ParticleModifiers\RandomColor.cs" />
+    <Compile Include="Nebula\ParticleModifiers\IParticleModifier.cs" />
+    <Compile Include="Nebula\ParticleModifiers\Movement\Friction.cs" />
+    <Compile Include="Nebula\ParticleModifiers\Movement\Gravity\DirectionalPull.cs" />
+    <Compile Include="Nebula\ParticleModifiers\Movement\Container\RectParticleContainer.cs" />
+    <Compile Include="Nebula\ParticleModifiers\AgeTransform\Scale.cs" />
+    <Compile Include="Nebula\Particle.cs" />
+    <Compile Include="Nebula\Emitter.cs" />
+    <Compile Include="Nebula\Patterns\CircleEmissionPattern.cs" />
+    <Compile Include="Nebula\Patterns\RingEmissionPattern.cs" />
+    <Compile Include="Nebula\Patterns\IEmissionPattern.cs" />
+    <Compile Include="Nebula\Patterns\LineEmissionPattern.cs" />
+    <Compile Include="Nebula\Patterns\PointEmissionPattern.cs" />
+    <Compile Include="Nebula\Patterns\RectangleEmissionPattern.cs" />
+    <Compile Include="Nebula\IEmitter.cs" />
+    <Compile Include="Nebula\Presets\AbstractEmitterPreset.cs" />
+    <Compile Include="Nebula\Presets\ColorfulRing.cs" />
+    <Compile Include="Nebula\Presets\Fire.cs" />
+    <Compile Include="Nebula\Presets\Rain.cs" />
+    <Compile Include="Nebula\Range.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tests\RangeTest.cs" />
+    <Compile Include="Tests\ParticleTest.cs" />
+    <Compile Include="Tests\EmitterTest.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Tests\EmitterModifiers\" />
+    <Folder Include="Tests\ParticleModifiers\AgeTransform\" />
+    <Folder Include="Tests\ParticleModifiers\Movement\Container\" />
+    <Folder Include="Tests\ParticleModifiers\Movement\Gravity\" />
+    <Folder Include="Tests\Patterns\" />
+    <Folder Include="Tests\Presets\" />
+  </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>

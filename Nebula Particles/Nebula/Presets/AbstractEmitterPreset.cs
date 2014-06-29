@@ -8,9 +8,9 @@ namespace Nebula.Particles2D.Presets {
         private Vector2 position = new Vector2(0, 0);
         public AbstractEmitterPreset() {
         }
-        public void Update(int elapsedMiliseconds) {
+        public void Update(double elapsedMilliseconds) {
             foreach (IEmitter emitter in emitterList) {
-                emitter.Update(elapsedMiliseconds);
+                emitter.Update(elapsedMilliseconds);
             }
         }
         public void Draw(SpriteBatch spriteBatch) {

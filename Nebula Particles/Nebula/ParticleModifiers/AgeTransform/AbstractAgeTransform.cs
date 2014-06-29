@@ -8,11 +8,11 @@
             this.End = End;
             this.Cycles = Cycles;
         }
-        internal float InterpolateAmount(Particle particle) {
-            float age = particle.Age;
-            float lifeSpan = particle.LifeSpan;
+        internal double InterpolationAmount(Particle particle) {
+            double age = particle.Age;
+            double lifeSpan = particle.LifeSpan;
             return (age / (lifeSpan / Cycles)) % 1;
         }
-        public abstract void Update(Emitter emitter,Particle particle, int elapsedMiliseconds);
+        public abstract void Update(Emitter emitter, Particle particle, double elapsedMilliseconds);
     }
 }

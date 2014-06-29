@@ -4,6 +4,7 @@ using Nebula.Particles2D.Patterns;
 using Nebula.Particles2D.ParticleModifiers.Movement.Gravity;
 using Nebula.Particles2D.ParticleModifiers.Movement;
 using Nebula.Particles2D.ParticleModifiers.AgeTransform;
+using System;
 namespace Nebula.Particles2D.Presets {
     public class Rain : AbstractEmitterPreset {
         /*
@@ -27,8 +28,8 @@ namespace Nebula.Particles2D.Presets {
             Range particleSpeed = new Range(gravity * 0.5f, gravity * 1.2f);
             Range particleLifespan = new Range(1000, 1500);
             Range particleAngle = new Range(90, 90);
-            float particlesPerFrame = 10;
-            return new Emitter(particle, particleSpeed, particleAngle, particleLifespan, particlesPerFrame);
+            float particlesPerSecond = 600;
+            return new Emitter(particle, particleSpeed, particleAngle, particleLifespan, new Random(), particlesPerSecond);
         }
     }
 }
